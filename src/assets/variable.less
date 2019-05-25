@@ -1,0 +1,47 @@
+@primary-color: rgba(97, 144, 232, 1); // 主要操作色
+@secondary-color: rgba(97, 144, 232, 0.8); // 次要操作色
+@lighter-color: rgba(97, 144, 232, 0.5); // 次要操作色
+
+.c(@c: #333) {
+    color: @c;
+}
+
+.bg(@bg: #fff) {
+    background: @bg;
+}
+
+.w(@w: 100%) {
+    width: @w;
+}
+
+.h(@h: 100%) {
+    height: @h;
+}
+
+.br(@br: 0.1rem) {
+    border-radius: @br;
+}
+
+.br-tl(@br: 0.1rem) {
+    border-top-left-radius: @br;
+}
+
+.br-tr(@br: 0.1rem) {
+    border-top-right-radius: @br;
+}
+
+.br-bl(@br: 0.1rem) {
+    border-bottom-left-radius: @br;
+}
+
+.br-br(@br: 0.1rem) {
+    border-bottom-right-radius: @br;
+}
+
+.bx-sz(@bx: border-box) {
+    box-sizing: @bx;
+}
+
+.fz(@fz: 0.32rem) {
+    font-size: @fz;
+}
