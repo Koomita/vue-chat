@@ -61,6 +61,7 @@ export default {
   padding: 0.3rem;
   display: flex;
   flex-wrap: wrap;
+  border-top: 0.01rem solid @secondary-color;
   .tool {
     .w(1rem);
     .h(1rem);
