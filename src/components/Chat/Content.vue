@@ -18,7 +18,7 @@
               object-fit="cover"
             >
             <span
-              v-if="now < talk.time + 120 && talk.person == 'me'"
+              v-if="now < parseInt(talk.time) + 120 && talk.person == 'me'"
               class="retreat" @click="delRecord(t_index)"
             >撤回</span>
           </div>
@@ -38,6 +38,9 @@ export default {
   },
   methods: {
     ...mapMutations('chat', ['delRecord']),
+    /**
+     * 轮询判断是否显示“撤回”
+     */
     count () {
       this.timer = setTimeout(() => {
         this.now = Math.ceil(new Date().getTime() / 1000)
@@ -45,11 +48,14 @@ export default {
       }, 1000)
     }
   },
-  activated () {
+  mounted () {
     this.now = Math.ceil(new Date().getTime() / 1000)
     this.count()
   },
   deactivated () {
+    clearTimeout(this.timer)
+  },
+  beforeDestroy () {
     clearTimeout(this.timer)
   }
 }

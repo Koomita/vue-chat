@@ -17,18 +17,18 @@ export default {
   },
   data () {
     return {
-      showTool: false
+      showTool: false // 显示操作工具箱
     }
   }
 }
 </script>
 <style lang="less" scoped>
 .chat {
-    .h(100vh);
-    .w(100vw);
-    display: flex;
-    flex-direction: column;
-    box-sizing: border-box;
-    overflow: hidden;
+  .h(100vh);
+  .w(100vw);
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 </style>
