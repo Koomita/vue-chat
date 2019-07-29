@@ -10,7 +10,7 @@
         <template v-else>
           <img :src="'/static/images/' + talk.person + '.jpeg'" class="avatar">
           <div class="pop">
-            <div v-if="talk.content_type == 'text'" class="text">{{ talk.content }}</div>
+            <pre v-if="talk.content_type == 'text'" class="text">{{ talk.content }}</pre>
             <img
               v-else-if="talk.content_type == 'image'"
               :src="talk.content"
@@ -94,6 +94,8 @@ export default {
         min-width: 0.5rem;
         max-width: 3.9rem;
         word-wrap: break-word;
+        white-space: pre-line;
+        margin: 0;
       }
       .content-img {
         .br;

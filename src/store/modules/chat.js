@@ -21,6 +21,13 @@ export default {
     addRecord (state, obj) {
       // 聊天记录，因为聊天记录显示是倒序的，所以是插入第一条
       state.record.unshift(obj)
+      setTimeout(() => {
+        state.record.unshift({
+          ...obj,
+          person: 'other',
+          time: ~~(new Date().getTime() / 1000)
+        })
+      }, 1000)
     },
     delRecord (state, index) {
       let obj = state.record[index]
@@ -30,11 +37,11 @@ export default {
         return alert('超过两分钟的信息无法撤回')
       } else {
         let people = obj.person === 'me' ? '你' : '对方'
-        obj = Object.assign(obj, {
+        state.record[index] = {
+          ...obj,
           person: 'system',
           content: people + '撤回了一条消息'
-        })
-        state.record[index] = obj
+        }
       }
     }
   },
